@@ -34,10 +34,10 @@ const sidebarItems2 = [
 
 export function Sidebar() {
   return (
-    <aside className="h-screen py-8 px-4 bg-[#121212] overflow-clip space-grotesk`">
+    <aside className="h-screen py-8 px-4 bg-[#121212] overflow-clip space-grotesk sm:flex sm:flex-col hidden">
       <section className="flex flex-col gap-7 h-full">
         <Image
-          src="/user.svg"
+          src="/loggedinuser.png"
           width={32}
           height={32}
           className="ml-auto rounded-[25px] border aspect-square object-contain"

@@ -22,9 +22,11 @@ export function MainPage() {
 
         <SearchPoint />
 
-        <section className="flex justify-between items-center px-7">
+        <section className="flex justify-between items-center px-7 w-full overflow-x-auto">
           <NavTags />
-          <FilterButton />
+          {/* <div className="md:block hidden">
+            <FilterButton />
+          </div> */}
         </section>
 
         <div className="px-7 flex flex-col gap-6">
@@ -38,7 +40,7 @@ export function MainPage() {
               src="/user.png"
             />
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 w-full overflow-x-auto">
               <Card
                 key="My_Resume"
                 buttonTitle="Other"
@@ -64,7 +66,7 @@ export function MainPage() {
 
 const Header = () => {
   return (
-    <header className="p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 pr-7 space-grotesk">
+    <header className="p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 pr-7 space-grotesk overflow-hidden">
       <h2 className="font-bold text-xl text-[#FEFEFE]space-grotesk">
         Find Developers
       </h2>
@@ -76,6 +78,7 @@ const Header = () => {
         classNames={{
           input:
             "border-[#292929] text-[#FEFEFE] bg-[#1E1E1E] space-grotesk px-5 flex gap-2",
+          root: "md:block hidden",
         }}
         styles={{
           input: {
@@ -116,9 +119,10 @@ const SearchPoint = () => {
         onChange={(event) => setValue(event.currentTarget.value)}
         placeholder='Try Searching "full time backend developer" '
         icon={<RiSearch2Line size={16} />}
-        w="75%"
+        w="100%"
         classNames={{
           input: "bg-[#1E1E1E] border-[#292929] text-[#FEFEFE] space-grotesk",
+          root: "md:block hidden",
         }}
         styles={{
           input: {
@@ -130,12 +134,18 @@ const SearchPoint = () => {
         }}
       />
 
-      <article className="flex justify-center items-center">
-        <ButtonGradient
-          button1={button1}
-          setButton1Gradient={setButton1Gradient}
-        />
-        <Button button2={button2} setButton2Gradient={setButton2Gradient} />
+      <article className="flex justify-between items-center">
+        <div className="flex">
+          <ButtonGradient
+            button1={button1}
+            setButton1Gradient={setButton1Gradient}
+          />
+          <Button button2={button2} setButton2Gradient={setButton2Gradient} />
+        </div>
+
+        <div className="md:hidden block">
+          <FilterButton />
+        </div>
       </article>
     </div>
   );
@@ -154,7 +164,7 @@ const ButtonGradient = ({
         button1
           ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded space-grotesk"
           : "bg-inherit "
-      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk`}
+      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk whitespace-nowrap`}
       onClick={() => setButton1Gradient(!button1)}>
       Full Time
     </button>
@@ -188,7 +198,7 @@ const NavTags = () => {
   }
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 w-full overflow-x-auto">
       {tabLists.map((tab) =>
         tabWithGradient === tab ? (
           <button
@@ -234,19 +244,27 @@ const CardHeader = ({
 }) => {
   return (
     <div className="flex justify-between">
-      <div className="flex gap-[14px] space-grotesk">
-        <Image src={src} alt="user image" width={60} height={60} />
+      <div className="flex gap-[14px] space-grotesk justify-start items-start">
+        <Image
+          src={src}
+          alt="user image"
+          width={60}
+          height={60}
+          className="aspect-square object-contain"
+        />
 
         <div className="space-grotesk">
           <h2 className="font-bold text-lg/[32px] text-[#FEFEFE]">{name}</h2>
 
-          <article>
+          <article className="flex gap-1 flex-col">
             <h3 className="font-medium text-base text-[#888888] flex items-center gap-1">
               <span>{location}</span>
               <span className="w-1 h-1 rounded-full bg-[#888888]" />
               <span>{amount}</span>
             </h3>
-            <span></span>
+            <span className="font-bold text-[16px]/[24px] space-grotesk text-[#FEFEFE] border rounded-[20px] p-[4px_10px] w-fit">
+              Frontend developer
+            </span>
           </article>
         </div>
       </div>
@@ -267,7 +285,7 @@ const CardContainer = () => {
         src="/john.png"
       />
 
-      <section className="flex gap-1 space-grotesk">
+      <section className="flex gap-2 w-full overflow-x-auto">
         {cardDetails.map(({ buttonTitle, cardTitle, cardDetails }) => (
           <Card
             key={cardTitle}
@@ -292,6 +310,10 @@ const cardDetails = [
     buttonTitle: "Other",
     cardTitle: "Portfolio",
   },
+  {
+    buttonTitle: "Other",
+    cardTitle: "Portfolio",
+  },
 ];
 
 const Card = ({
@@ -304,7 +326,7 @@ const Card = ({
   cardDetails?: string;
 }) => {
   return (
-    <section className="border-[#414141] bg-[#292929] rounded-[10px] p-3 gap-2 flex flex-col w-[320px] space-grotesk">
+    <section className="border-[#414141] bg-[#292929] rounded-[10px] p-3 gap-2 flex flex-col min-w-[320px] space-grotesk max-w-[320px]">
       <span className="p-[4px_12px] border border-[#FEFEFE] border-solid font-medium text-[#FEFEFE] rounded-[20px] bg-[#292929] w-fit space-grotesk">
         {buttonTitle}
       </span>
