@@ -5,6 +5,7 @@ import { TextInput } from "@mantine/core";
 import { Filter } from "iconsax-react";
 import { useState } from "react";
 import { RiSearch2Line } from "react-icons/ri";
+import Image from "next/image";
 
 const tabLists = [
   "Discover",
@@ -25,6 +26,37 @@ export function MainPage() {
           <NavTags />
           <FilterButton />
         </section>
+
+        <div className="px-7 flex flex-col gap-6">
+          <CardContainer />
+
+          <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-7">
+            <CardHeader
+              name="John Doe"
+              location="Lagos, Nigeria"
+              amount="$1000-3000 (USD)"
+              src="/user.png"
+            />
+
+            <div className="flex gap-1">
+              <Card
+                key="My_Resume"
+                buttonTitle="Other"
+                cardTitle="My_Resume"
+                cardDetails="I am updating my resume, as completing my projects."
+              />
+
+              <Image
+                src="/designcode.png"
+                alt="user image"
+                width={320}
+                height={60}
+              />
+
+              <Card key="Portfolio" buttonTitle="Other" cardTitle="Portfolio" />
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );
@@ -162,5 +194,113 @@ const FilterButton = () => {
     <button className="p-[7px_24px] border-[#292929] border flex justify-center items-center rounded-lg cursor-pointer">
       <Filter size="18" color="#FEFEFE" />;
     </button>
+  );
+};
+
+const CardHeader = ({
+  name,
+  location,
+  amount,
+  src,
+}: {
+  name: string;
+  location: string;
+  amount: string;
+  src: string;
+}) => {
+  return (
+    <div className="flex justify-between">
+      <div className="flex gap-[14px]">
+        <Image src={src} alt="user image" width={60} height={60} />
+
+        <div>
+          <h2 className="font-bold text-lg/[32px] text-[#FEFEFE]">{name}</h2>
+
+          <article>
+            <h3 className="font-medium text-base text-[#888888] flex items-center gap-1">
+              <span>{location}</span>
+              <span className="w-1 h-1 rounded-full bg-[#888888]" />
+              <span>{amount}</span>
+            </h3>
+            <span></span>
+          </article>
+        </div>
+      </div>
+      <button className="p-[8px_16px] bg-[#FDD649] rounded-[30px] font-medium text-[#121212] max-h-[40px]">
+        Hire Me
+      </button>
+    </div>
+  );
+};
+
+const CardContainer = () => {
+  return (
+    <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-7">
+      <CardHeader
+        name="John Doe"
+        location="New jersey, USA"
+        amount="$250, 000(USD)"
+        src="/john.png"
+      />
+
+      <section className="flex gap-1">
+        {cardDetails.map(({ buttonTitle, cardTitle, cardDetails }) => (
+          <Card
+            key={cardTitle}
+            buttonTitle={buttonTitle}
+            cardTitle={cardTitle}
+            cardDetails={cardDetails}
+          />
+        ))}
+      </section>
+    </section>
+  );
+};
+
+const cardDetails = [
+  {
+    buttonTitle: "Other",
+    cardTitle: "My_Resume",
+    cardDetails: "I am updating my resume, as completing my projects.",
+  },
+
+  {
+    buttonTitle: "Other",
+    cardTitle: "Portfolio",
+  },
+];
+
+const Card = ({
+  buttonTitle,
+  cardTitle,
+  cardDetails,
+}: {
+  buttonTitle: string;
+  cardTitle: string;
+  cardDetails?: string;
+}) => {
+  return (
+    <section className="border-[#414141] bg-[#292929] rounded-[10px] p-3 gap-2 flex flex-col w-[320px]">
+      <span className="p-[4px_12px] border border-[#FEFEFE] border-solid font-medium text-[#FEFEFE] rounded-[20px] bg-[#292929] w-fit">
+        {buttonTitle}
+      </span>
+      <article className="flex flex-col flex-1">
+        <h3 className="font-bold text-[18px]/[30px] text-[#FEFEFE] flex-1">
+          {cardTitle}
+        </h3>
+        <p className="font-normal text-[12px] text-[#B7B7B7] max-w-[280px]">
+          {cardDetails}
+        </p>
+
+        <div>
+          <span className="text-[12px] text-[#B7B7B7] font-normal">
+            Last Updated:{" "}
+          </span>
+          <time className="font-normal text-[12px] text-[#FEFEFE]">
+            Tue, Dec 13, 2022
+          </time>
+        </div>
+      </article>
+    </section>
   );
 };
