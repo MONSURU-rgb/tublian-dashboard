@@ -1,8 +1,8 @@
 "use client";
 
 import { button } from "@/app/component/Button";
-import { TextInput } from "@mantine/core";
-import { Filter } from "iconsax-react";
+import { Select, TextInput } from "@mantine/core";
+import { ArrowDown2, Filter } from "iconsax-react";
 import { useState } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export function MainPage() {
               src="/user.png"
             />
 
-            <div className="flex gap-1">
+            <div className="flex gap-2">
               <Card
                 key="My_Resume"
                 buttonTitle="Other"
@@ -64,8 +64,32 @@ export function MainPage() {
 
 const Header = () => {
   return (
-    <header className="p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 border border-[#1e1e1eeb] pr-7">
-      <h2 className="font-bold text-xl text-[#FEFEFE]">Find Developers</h2>
+    <header className="p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 pr-7 space-grotesk">
+      <h2 className="font-bold text-xl text-[#FEFEFE]space-grotesk">
+        Find Developers
+      </h2>
+
+      <Select
+        placeholder="Sort By high streetcred"
+        data={[{ value: "low", label: "Sort By low streetcred" }]}
+        rightSection={<ArrowDown2 size="18" color="#FEFEFE" />}
+        classNames={{
+          input:
+            "border-[#292929] text-[#FEFEFE] bg-[#1E1E1E] space-grotesk px-5 flex gap-2",
+        }}
+        styles={{
+          input: {
+            "&::placeholder": {
+              color: "#888888",
+              fontFamily: "Space Grotesk",
+            },
+          },
+
+          dropdown: {
+            zIndex: 999,
+          },
+        }}
+      />
     </header>
   );
 };
@@ -94,7 +118,7 @@ const SearchPoint = () => {
         icon={<RiSearch2Line size={16} />}
         w="75%"
         classNames={{
-          input: "bg-[#1E1E1E] border-[#292929] text-[#FEFEFE]",
+          input: "bg-[#1E1E1E] border-[#292929] text-[#FEFEFE] space-grotesk",
         }}
         styles={{
           input: {
@@ -128,9 +152,9 @@ const ButtonGradient = ({
     <button
       className={`${
         button1
-          ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded"
-          : "bg-inherit"
-      } relative p-[10px] text-[#FEFEFE] font-bold`}
+          ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded space-grotesk"
+          : "bg-inherit "
+      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk`}
       onClick={() => setButton1Gradient(!button1)}>
       Full Time
     </button>
@@ -149,7 +173,7 @@ const Button = ({
         button2
           ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded"
           : "bg-inherit"
-      } relative p-[10px] text-[#FEFEFE] font-bold`}
+      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk`}
       onClick={() => setButton2Gradient(!button2)}>
       Freelance
     </button>
@@ -172,7 +196,7 @@ const NavTags = () => {
             key={tab}
             onClick={() => changeActiveState(tab)}>
             {tab}
-            <span className="bg-[#121212] absolute top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer">
+            <span className="bg-[#121212] absolute top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer space-grotesk">
               {tab}
             </span>
           </button>
@@ -191,7 +215,7 @@ const NavTags = () => {
 
 const FilterButton = () => {
   return (
-    <button className="p-[7px_24px] border-[#292929] border flex justify-center items-center rounded-lg cursor-pointer">
+    <button className="p-[7px_24px] border-[#292929] border flex justify-center items-center rounded-lg cursor-pointer space-grotesk">
       <Filter size="18" color="#FEFEFE" />;
     </button>
   );
@@ -210,10 +234,10 @@ const CardHeader = ({
 }) => {
   return (
     <div className="flex justify-between">
-      <div className="flex gap-[14px]">
+      <div className="flex gap-[14px] space-grotesk">
         <Image src={src} alt="user image" width={60} height={60} />
 
-        <div>
+        <div className="space-grotesk">
           <h2 className="font-bold text-lg/[32px] text-[#FEFEFE]">{name}</h2>
 
           <article>
@@ -235,7 +259,7 @@ const CardHeader = ({
 
 const CardContainer = () => {
   return (
-    <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-7">
+    <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-7 space-grotesk">
       <CardHeader
         name="John Doe"
         location="New jersey, USA"
@@ -243,7 +267,7 @@ const CardContainer = () => {
         src="/john.png"
       />
 
-      <section className="flex gap-1">
+      <section className="flex gap-1 space-grotesk">
         {cardDetails.map(({ buttonTitle, cardTitle, cardDetails }) => (
           <Card
             key={cardTitle}
@@ -280,11 +304,11 @@ const Card = ({
   cardDetails?: string;
 }) => {
   return (
-    <section className="border-[#414141] bg-[#292929] rounded-[10px] p-3 gap-2 flex flex-col w-[320px]">
-      <span className="p-[4px_12px] border border-[#FEFEFE] border-solid font-medium text-[#FEFEFE] rounded-[20px] bg-[#292929] w-fit">
+    <section className="border-[#414141] bg-[#292929] rounded-[10px] p-3 gap-2 flex flex-col w-[320px] space-grotesk">
+      <span className="p-[4px_12px] border border-[#FEFEFE] border-solid font-medium text-[#FEFEFE] rounded-[20px] bg-[#292929] w-fit space-grotesk">
         {buttonTitle}
       </span>
-      <article className="flex flex-col flex-1">
+      <article className="flex flex-col flex-1 space-grotesk">
         <h3 className="font-bold text-[18px]/[30px] text-[#FEFEFE] flex-1">
           {cardTitle}
         </h3>
@@ -293,7 +317,7 @@ const Card = ({
         </p>
 
         <div>
-          <span className="text-[12px] text-[#B7B7B7] font-normal">
+          <span className="text-[12px] text-[#B7B7B7] font-normal space-grotesk">
             Last Updated:{" "}
           </span>
           <time className="font-normal text-[12px] text-[#FEFEFE]">
