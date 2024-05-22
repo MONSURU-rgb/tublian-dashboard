@@ -15,6 +15,10 @@ body {
   font-family: "Space Grotesk";
 }
 
+.space-grotesk {
+  font-family: var(--space-grotesk);
+}
+
 /* .mantine-Select-section {
   width: 40px;
   height: 20px;

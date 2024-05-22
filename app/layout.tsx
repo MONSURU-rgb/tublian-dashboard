@@ -4,8 +4,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { MantineProvider } from "@mantine/core";
+import { Space_Grotesk } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const space_Grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--space-grotesk",
+});
 
 const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <MantineProvider withGlobalStyles withNormalizeCSS>
-        <body>{children}</body>
+        <body className={space_Grotesk.variable}>{children}</body>
       </MantineProvider>
     </html>
   );
