@@ -10,3 +10,6 @@ This dashboard was designed using the following tech tools:
 - TailwindCSS
 - Git (version control)
 - Figma
+
+
+## DEMO
