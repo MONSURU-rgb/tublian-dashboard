@@ -30,7 +30,8 @@ export const SearchPoint = () => {
         icon={<RiSearch2Line size={16} />}
         w="100%"
         classNames={{
-          input: "bg-[#1E1E1E] border-[#292929] text-[#FEFEFE] space-grotesk",
+          input:
+            "bg-[#1E1E1E] border-[#292929] text-[#FEFEFE] space-grotesk h-[54px]",
           root: "md:block hidden",
         }}
         styles={{

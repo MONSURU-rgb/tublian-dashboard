@@ -27,7 +27,6 @@ export function CardWithImage() {
           alt="user image"
           width={320}
           height={152}
-          className="flex-1 !min-h-[152px] object-cover"
         />
 
         <Card key="Portfolio" buttonTitle="Other" cardTitle="Portfolio" />
