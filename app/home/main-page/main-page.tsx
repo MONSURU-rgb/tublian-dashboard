@@ -10,7 +10,7 @@ import {
 
 export function MainPage() {
   return (
-    <div className="bg-[#121212] md:pr-2 w-full h-screen overflow-y-auto mt-2 rounded-[20px_20px_0px_0px] md:border md:border-[#1e1e1eeb] no-scrollbar">
+    <div className="bg-[#121212] md:pr-2 w-full h-screen overflow-y-auto mt-2 rounded-[20px_20px_0px_0px] md:border md:border-[#1e1e1eeb] no-scrollbar pb-4">
       <Header />
       <div className="flex flex-col md:gap-4 gap-1 overflow-y-auto no-scrollbar">
         <div className="flex flex-col md:gap-4 gap-1 h-full overflow-y-auto">
