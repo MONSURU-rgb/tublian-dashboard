@@ -16,7 +16,7 @@ export const Header = () => {
     setIsOpened((prevState) => !prevState);
   }
   return (
-    <header className="p-3 md:p-5 flex justify-between text-[#FEFEFE] items-center pr-2 md:pr-7 space-grotesk z-[900] backdrop-opacity-0 bg-[#121212] !sticky top-0">
+    <header className="p-3 md:p-5 flex justify-between text-[#FEFEFE] items-center pr-2 md:pr-7 space-grotesk z-[900] backdrop-opacity-0 bg-[#121212] !sticky top-0 md:border-b-[#1e1e1eeb]">
       <section className="md:hidden flex flex-col gap-5 w-full pr-2 !sticky top-0">
         <div className="flex gap-5 items-center sticky top-0 z-[999] backdrop-opacity-0 bg-[#121212]">
           {isOpened ? (
