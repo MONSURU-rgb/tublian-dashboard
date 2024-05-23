@@ -20,7 +20,7 @@ const cardDetails = [
 
 export const CardContainer = () => {
   return (
-    <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-7 space-grotesk">
+    <section className="p-3 md:p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-3 md:gap-7 space-grotesk no-scrollbar">
       <CardHeader
         name="John Doe"
         location="New jersey, USA"
@@ -28,7 +28,7 @@ export const CardContainer = () => {
         src="/john.png"
       />
 
-      <section className="flex gap-2 overflow-x-auto">
+      <section className="flex gap-2 overflow-x-auto no-scrollbar">
         {cardDetails.map(({ buttonTitle, cardTitle, cardDetails }) => (
           <Card
             key={cardTitle}

@@ -11,7 +11,7 @@ export const ButtonGradient = ({
         button1
           ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded space-grotesk"
           : "bg-inherit "
-      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk whitespace-nowrap`}
+      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk whitespace-nowrap text-base md:text-xl`}
       onClick={() => setButton1Gradient(!button1)}>
       Full Time
     </button>
@@ -30,7 +30,7 @@ export const Button = ({
         button2
           ? "bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] rounded"
           : "bg-inherit"
-      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk`}
+      } relative p-[10px] text-[#FEFEFE] font-bold space-grotesk text-base md:text-xl`}
       onClick={() => setButton2Gradient(!button2)}>
       Freelance
     </button>

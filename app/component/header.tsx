@@ -5,8 +5,8 @@ import { ArrowDown2, Filter } from "iconsax-react";
 
 export const Header = () => {
   return (
-    <header className="p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 pr-7 space-grotesk">
-      <h2 className="font-bold text-xl text-[#FEFEFE] space-grotesk">
+    <header className="p-3 md:p-5 flex justify-between text-[#FEFEFE] items-center sticky top-0 pr-2 md:pr-7 space-grotesk">
+      <h2 className="font-bold md:text-xl text-[#FEFEFE] space-grotesk text-lg">
         Find Developers
       </h2>
 

@@ -22,7 +22,7 @@ export const SearchPoint = () => {
   }
 
   return (
-    <div className="px-7 flex gap-2 justify-between w-full">
+    <div className="px-[14px] pb-3 pt-0 md:px-7 flex gap-2 justify-between w-full">
       <TextInput
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
@@ -43,8 +43,8 @@ export const SearchPoint = () => {
         }}
       />
 
-      <article className="flex justify-between items-center !w-full">
-        <div className="flex flex-1">
+      <article className="flex justify-between items-center md:w-fit flex-1">
+        <div className="flex bg-[#1E1E1E] border-[#292929] rounded-[10px] !w-fit p-1">
           <ButtonGradient
             button1={button1}
             setButton1Gradient={setButton1Gradient}
