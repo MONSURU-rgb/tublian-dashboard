@@ -21,7 +21,7 @@ export const CardContainer = () => {
         name="John Doe"
         location="New jersey, USA"
         amount="$250, 000(USD)"
-        src="/john.png"
+        src="/John.png"
       />
 
       <section className="flex gap-2 overflow-x-auto no-scrollbar">
