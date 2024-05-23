@@ -16,11 +16,11 @@ export function MainPage() {
 
         <SearchPoint />
 
-        <section className="flex justify-between items-center px-7 p-3 overflow-x-auto">
+        <section className="flex justify-between items-center md:px-7 p-3 overflow-x-auto">
           <NavTags />
         </section>
 
-        <div className="px-7 flex flex-col gap-6">
+        <div className="md:px-7 flex flex-col gap-6 px-3">
           <CardContainer />
           <CardWithImage />
         </div>

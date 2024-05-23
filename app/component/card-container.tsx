@@ -12,15 +12,11 @@ const cardDetails = [
     buttonTitle: "Other",
     cardTitle: "Portfolio",
   },
-  {
-    buttonTitle: "Other",
-    cardTitle: "Portfolio",
-  },
 ];
 
 export const CardContainer = () => {
   return (
-    <section className="p-3 md:p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-3 md:gap-7 space-grotesk no-scrollbar">
+    <section className="p-3 md:p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-4 md:gap-7 space-grotesk no-scrollbar">
       <CardHeader
         name="John Doe"
         location="New jersey, USA"
