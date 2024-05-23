@@ -22,7 +22,13 @@ export function CardWithImage() {
           cardDetails="I am updating my resume, as completing my projects."
         />
 
-        <Image src="/designcode.png" alt="user image" width={320} height={60} />
+        <Image
+          src="/designcode.png"
+          alt="user image"
+          width={320}
+          height={152}
+          className="flex-1 !min-h-[152px] object-cover"
+        />
 
         <Card key="Portfolio" buttonTitle="Other" cardTitle="Portfolio" />
       </div>
