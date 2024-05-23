@@ -21,7 +21,7 @@ export const NavTags = () => {
       {tabLists.map((tab) =>
         tabWithGradient === tab ? (
           <button
-            className="bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] p-[8px_24px] rounded-lg text-transparent !relative w-fit cursor-pointer min-h-[34px] space-grotesk min-w-fit text-sm md:text-base"
+            className="bg-gradient-to-r from-[#FBDA61] to-[#FF5ACD] p-[8px_24px] rounded-[10px] text-transparent !relative w-fit cursor-pointer min-h-[34px] space-grotesk min-w-fit text-sm md:text-base"
             key={tab}
             onClick={() => changeActiveState(tab)}>
             {tab}
