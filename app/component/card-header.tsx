@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const CardHeader = ({
   name,
@@ -39,8 +40,8 @@ export const CardHeader = ({
           </article>
         </div>
       </div>
-      <button className="p-[8px_16px] bg-[#FDD649] rounded-[30px] font-medium text-[#121212] max-h-[40px]text-sm md:text-base h-fit whitespace-nowrap">
-        Hire Me
+      <button className="p-[8px_16px] bg-[#FDD649] rounded-[30px] font-medium text-[#121212] max-h-[40px] text-sm md:text-base h-fit whitespace-nowrap cursor-pointer hover:text-[#121212]/70">
+        <Link href="mailto:seowriteru3@gmail.com">Hire Me</Link>
       </button>
     </div>
   );

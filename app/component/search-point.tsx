@@ -8,7 +8,6 @@ import { FilterButton } from "./filter-button";
 
 export const SearchPoint = () => {
   const [value, setValue] = useState("");
-
   const [button1, setButton1] = useState(true);
   const [button2, setButton2] = useState(false);
 

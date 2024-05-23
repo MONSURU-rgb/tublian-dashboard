@@ -25,13 +25,13 @@ export const NavTags = () => {
             key={tab}
             onClick={() => changeActiveState(tab)}>
             {tab}
-            <span className="bg-[#121212] absolute top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer space-grotesk text-sm md:text-base">
+            <span className="bg-[#121212] absolute top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer space-grotesk text-sm md:text-base hover:text-[#FEFEFE]/70">
               {tab}
             </span>
           </button>
         ) : (
           <button
-            className="bg-[#1E1E1E] top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer space-grotesk border-[#292929] text-sm md:text-base"
+            className="bg-[#1E1E1E] top-[1px] left-[1px] rounded-[10px] right-[1px] text-[#FEFEFE] whitespace-nowrap p-[7px_22px] cursor-pointer space-grotesk border-[#292929] text-sm md:text-base hover:text-[#FEFEFE]/70"
             key={tab}
             onClick={() => changeActiveState(tab)}>
             {tab}
