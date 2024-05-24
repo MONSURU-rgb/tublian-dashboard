@@ -13,3 +13,5 @@ This dashboard was designed using the following tech tools:
 
 
 ## DEMO
+
+[Tublian dashboard](https://tublian-dashboard.vercel.app)
