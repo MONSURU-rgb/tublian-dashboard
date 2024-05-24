@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function CardWithImage() {
   return (
-    <section className="p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-4 md:gap-7 no-scrollbar">
+    <section className="p-3 md:p-6 bg-[#1E1E1E] border-[#292929] rounded-[10px] flex flex-col gap-4 md:gap-7 no-scrollbar">
       <CardHeader
         name="John Doe"
         location="Lagos, Nigeria"
